@@ -1,17 +1,17 @@
 module.exports = {
-    entry: __dirname + '/src/index.js',
+    entry: __dirname + '/src/index.jsx',
     output: {
         path: __dirname + '/dist',
         publicPath: '/dist/',
         filename: 'bundle.js'
     },
-
     module: {
         rules: [
             {
-                test: /\.js/,
+                test: /\.jsx?$/,
                 use: ['babel-loader'],
-                exclude: /node_modules/
+                exclude: /node_modules/,
+
             },
             {
                 test: /\.scss$/,
