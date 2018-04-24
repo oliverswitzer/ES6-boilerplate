@@ -5,11 +5,18 @@ module.exports = {
         publicPath: '/dist/',
         filename: 'bundle.js'
     },
+
     module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: 'babel-loader'
-        }]
+        rules: [
+            {
+                test: /\.js/,
+                use: ['babel-loader'],
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            }
+        ]
     }
 };
